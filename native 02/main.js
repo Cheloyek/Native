@@ -54,4 +54,22 @@ const getData = (arr) => {
         const newValue = getNewValue(arr[i])
         result[i] = newValue
     }
+    return result
 }
+
+console.log(getData(students))
+
+//одинаковую часть кода вынесли в отдельную функцию
+const getNewArray = (arr, fn) => {
+    const result = []
+    for (i = 0; i < arr.length; i++) {
+        const newValue = fn(arr[i])
+        result[i] = newValue
+    }
+    return result
+}
+
+// = getNames
+console.log(getNewArray (students, (el) => el.name))
+// = getData
+console.log(getNewArray (students, (el) => `${el.name}, ${el.age} yo, ${el.scores} scores`))
