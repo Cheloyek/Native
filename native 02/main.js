@@ -116,7 +116,7 @@ console.log(students.find(el => el.scores === 100))
 const easyJoin = (arr, separator = ',') => {
     let result = ''
     for (let i = 0; i < arr.length; i++) {
-        if(i < arr.length - 1) {
+        if(i < arr.length - 1)/* -1 тк не нужна ',' после крайнего элемента */ {
             result = result + arr[i] + separator
         } else {
             result += arr[i]
@@ -129,3 +129,5 @@ console.log(easyJoin(["Bob", "Alex", "Nick", "John"]))
 console.log(["Bob", "Alex", "Nick", "John"].join())
 console.log(easyJoin(["Bob", "Alex", "Nick", "John"], ' '))
 console.log(["Bob", "Alex", "Nick", "John"].join(' '))
+
+//push
