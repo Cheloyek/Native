@@ -30,34 +30,31 @@ const students = [
 // 2. Получить из него новое значение
 // 3. Поместить значение в новый массив
 
-const getNames = (arr) => {
-    const result = []
-    const getNewValue = (el) => el.name // берем каждый объект и берем name
-    for (i = 0; i < arr.length; i++) {
-        const newValue = getNewValue(arr[i]) // создает элемент нового массива
-        result[i] = newValue //добавляет элемент в массив
-    }
-    return result
-}
-
-console.log(getNames(students))
+// const getNames = (arr) => {
+//     const result = []
+//     const getNewValue = (el) => el.name // берем каждый объект и берем name
+//     for (i = 0; i < arr.length; i++) {
+//         const newValue = getNewValue(arr[i]) // создает элемент нового массива
+//         result[i] = newValue //добавляет элемент в массив
+//     }
+//     return result
+// }
 
 // ["Bob, 22 yo, 85 scores, ...]
 // 1. Взять каждый элемент исходного массива
 // 2. Получить из него новое значение
 // 3. Поместить значение в новый массив
 
-const getData = (arr) => {
-    const result = []
-    const getNewValue = (el) => `${el.name}, ${el.age} yo, ${el.scores} scores`
-    for (i = 0; i < arr.length; i++) {
-        const newValue = getNewValue(arr[i])
-        result[i] = newValue
-    }
-    return result
-}
+// const getData = (arr) => {
+//     const result = []
+//     const getNewValue = (el) => `${el.name}, ${el.age} yo, ${el.scores} scores`
+//     for (i = 0; i < arr.length; i++) {
+//         const newValue = getNewValue(arr[i])
+//         result[i] = newValue
+//     }
+//     return result
+// }
 
-console.log(getData(students))
 
 //одинаковую часть кода вынесли в отдельную функцию
 const getNewArray = (arr, fn) => {
@@ -71,5 +68,11 @@ const getNewArray = (arr, fn) => {
 
 // = getNames
 console.log(getNewArray (students, (el) => el.name))
+console.log(easyMap(students,(el) => el.name))
 // = getData
 console.log(getNewArray (students, (el) => `${el.name}, ${el.age} yo, ${el.scores} scores`))
+console.log(getNewArray (students, (el) => el.scores))
+
+// console.log(students.map((el => el.name)))
+// console.log(students.map((el) => `${el.name}, ${el.age} yo, ${el.scores} scores`))
+// console.log(students.map((el) => el.scores))
