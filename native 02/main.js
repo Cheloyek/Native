@@ -81,7 +81,34 @@ console.log(students.map ((el)=> el.scores))
 // console.log(students.map((el) => el.scores))
 
 
-//easyFilter фильтрует массив, только id >= 3
+const easyFilter = (arr, fn) => {
+    const result = []
+    for (let i = 0; i < arr.length; i++) {
+        if (fn(arr[i]) === true){
+            result.push(arr[i])
+        }
+    }
+    return result
+}
 
-const easyFilter = (students.filter((el) => el.id >= 3))
-console.log(easyFilter)
+console.log(easyFilter(students, el => el.scores >= 100))
+
+//easyFilter фильтрует массив .filter
+
+const easyFilterId = (students.filter((el) => el.id >= 3))
+const easyFilterScores = (students.filter((el) => el.scores >= 100))
+console.log(easyFilterId)
+console.log(easyFilterScores)
+
+// находит только 1 значение
+const easyFind = (arr, fn) => {
+    for (let i = 0; i < arr.length; i++) {
+        if (fn(arr[i]) === true){
+            return arr[i]
+        }
+    }
+    return result
+}
+
+console.log(easyFind(students, el => el.scores === 100))
+console.log(students.find(el => el.scores === 100))
