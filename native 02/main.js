@@ -56,8 +56,8 @@ const students = [
 // }
 
 
-//одинаковую часть кода вынесли в отдельную функцию
-const getNewArray = (arr, fn) => {
+//=.map
+const easyMap = (arr, fn) => {
     const result = []
     for (i = 0; i < arr.length; i++) {
         const newValue = fn(arr[i])
@@ -66,12 +66,15 @@ const getNewArray = (arr, fn) => {
     return result
 }
 
-// = getNames
-console.log(getNewArray (students, (el) => el.name))
-console.log(easyMap(students,(el) => el.name))
-// = getData
-console.log(getNewArray (students, (el) => `${el.name}, ${el.age} yo, ${el.scores} scores`))
-console.log(getNewArray (students, (el) => el.scores))
+// not .map
+console.log(easyMap(students, (el) => el.name))
+console.log(easyMap(students, (el) => `${el.name}, ${el.age} yo, ${el.scores} scores`))
+console.log(easyMap(students,(el) => el.scores))
+
+// with .map
+console.log(students.map ((el) => el.name))
+console.log(students.map ((el) => `${el.name}, ${el.age} yo, ${el.scores} scores`)
+console.log(students.map ((el)=> el.scores))
 
 // console.log(students.map((el => el.name)))
 // console.log(students.map((el) => `${el.name}, ${el.age} yo, ${el.scores} scores`))
