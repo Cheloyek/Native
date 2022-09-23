@@ -73,9 +73,15 @@ console.log(easyMap(students,(el) => el.scores))
 
 // with .map
 console.log(students.map ((el) => el.name))
-console.log(students.map ((el) => `${el.name}, ${el.age} yo, ${el.scores} scores`)
+console.log(students.map ((el) => `${el.name}, ${el.age} yo, ${el.scores} scores`))
 console.log(students.map ((el)=> el.scores))
 
 // console.log(students.map((el => el.name)))
 // console.log(students.map((el) => `${el.name}, ${el.age} yo, ${el.scores} scores`))
 // console.log(students.map((el) => el.scores))
+
+
+//easyFilter фильтрует массив, только id >= 3
+
+const easyFilter = (students.filter((el) => el.id >= 3))
+console.log(easyFilter)
