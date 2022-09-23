@@ -107,8 +107,25 @@ const easyFind = (arr, fn) => {
             return arr[i]
         }
     }
-    return result
 }
 
 console.log(easyFind(students, el => el.scores === 100))
 console.log(students.find(el => el.scores === 100))
+
+// Метод соединяет в строку элементы массива, если separator не задан, то ','
+const easyJoin = (arr, separator = ',') => {
+    let result = ''
+    for (let i = 0; i < arr.length; i++) {
+        if(i < arr.length - 1) {
+            result = result + arr[i] + separator
+        } else {
+            result += arr[i]
+        }
+    }
+    return result
+}
+
+console.log(easyJoin(["Bob", "Alex", "Nick", "John"]))
+console.log(["Bob", "Alex", "Nick", "John"].join())
+console.log(easyJoin(["Bob", "Alex", "Nick", "John"], ' '))
+console.log(["Bob", "Alex", "Nick", "John"].join(' '))
