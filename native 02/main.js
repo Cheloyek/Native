@@ -56,7 +56,7 @@ const students = [
 // }
 
 
-//=.map
+//easyMap
 const easyMap = (arr, fn) => {
     const result = []
     for (i = 0; i < arr.length; i++) {
